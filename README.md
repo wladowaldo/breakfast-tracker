@@ -13,6 +13,6 @@ Docker.
 * Persons can be removed and added from the list via the GUI.
 
 ## Misc
-* Very non-production-ready - uses the Vite and the Flask dev servers.
+* Very non-production-ready - uses the Vite and Flask dev servers.
 * The database is hand-editable (it's in `work/`).
 
