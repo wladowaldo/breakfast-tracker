@@ -72,7 +72,11 @@ function add() {
 	<template #title>Breakfast Stats</template>
 	<template #content>
 		<DataTable :value="hallOfShame" >
-    		<Column field="name" header="Name"></Column>
+    		<Column field="name" header="Name">
+				<template #body="slotProps">
+            		<img v-if="slotProps.index === 0" src="/src/assets/death-star.svg" width="20" height="20" class="mr-2">{{ slotProps.data.name }}
+        		</template>
+			</Column>
     		<Column field="weeks" header="Weeks since last time"></Column>
 		</DataTable>
 	</template>
