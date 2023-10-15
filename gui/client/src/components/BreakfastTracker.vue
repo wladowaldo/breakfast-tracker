@@ -31,8 +31,9 @@ const hallOfShame = computed(() => {
 	const now = Date.now();
 	for (const entry of tmp) {
 		entry.weeks = parseInt((now - Date.parse(entry.last)) / (1000 * 60 * 60 * 24 * 7), 10);
+		entry.weeksFloat = parseFloat((now - Date.parse(entry.last)) / (1000 * 60 * 60 * 24 * 7));
 	}
-	return tmp.sort((a,b)=>b.weeks - a.weeks)
+	return tmp.sort((a,b)=>b.weeksFloat - a.weeksFloat)
 })
 
 
