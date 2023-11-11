@@ -1,20 +1,19 @@
 from http import HTTPStatus
 import json
-import os
-import uuid
 
 from flask import Flask
 from flask_cors import CORS
 
-import restx_monkey as monkey
-
-monkey.patch_restx()
-
-from flask_restx import Resource, Api, fields, abort
+from flask_restx import Resource, Api, Namespace
 
 app = Flask(__name__)
-api = Api(app)
 CORS(app)
+
+api = Namespace("api")
+
+api_ = Api()
+api_.add_namespace(api)
+api_.init_app(app)
 
 DB="/breakfast/work/db.json"
 
